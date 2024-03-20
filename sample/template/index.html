@@ -46,7 +46,7 @@ https://www.tooplate.com/view/2127-little-fashion
 
         <main>
 
-            <nav class="navbar navbar-expand-lg">
+              <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -100,6 +100,7 @@ https://www.tooplate.com/view/2127-little-fashion
                     </div>
                 </div>
             </nav>
+
 
             <section class="slick-slideshow">
                 <div class="slick-custom">
@@ -323,11 +324,13 @@ https://www.tooplate.com/view/2127-little-fashion
                         <div class="col-12 text-center">
                             <h2 class="mb-5">Featured Products</h2>
                         </div>
-                        <
+
+
+                    {% for i in result %}
                         <div class="col-lg-4 col-12 mb-3">
                             <div class="product-thumb">
                                 <a href="product-detail.html">
-                                    <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                    <img src='{{i.img.url}}' class="img-fluid product-image" alt="">
                                 </a>
 
                                 <div class="product-top d-flex">
@@ -339,68 +342,71 @@ https://www.tooplate.com/view/2127-little-fashion
                                 <div class="product-info d-flex">
                                     <div>
                                         <h5 class="product-title mb-0">
-                                            <a href="#" class="product-title-link">Tree pot</a>
+                                            <a href="product-detail.html" class="product-title-link">{{i.name}}</a>
                                         </h5>
 
-                                        <p class="product-p">Original package design from house</p>
+                                        <p class="product-p">{{i.desc }}</p>
                                     </div>
 
                                     <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small>
                                 </div>
                             </div>
                         </div>
+                    {% endfor %}
 
-                        <div class="col-lg-4 col-12 mb-3">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="#" class="img-fluid product-image" alt="">
-                                </a>
 
-                                <div class="product-top d-flex">
-                                    <span class="product-alert">Low Price</span>
+<!--                        <div class="col-lg-4 col-12 mb-3">-->
+<!--                            <div class="product-thumb">-->
+<!--                                <a href="product-detail.html">-->
+<!--                                    <img src="{% static 'images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg' %}" class="img-fluid product-image" alt="">-->
+<!--                                </a>-->
 
-                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                                </div>
+<!--                                <div class="product-top d-flex">-->
+<!--                                    <span class="product-alert">Low Price</span>-->
 
-                                <div class="product-info d-flex">
-                                    <div>
-                                        <h5 class="product-title mb-0">
-                                            <a href="#" class="product-title-link">Fashion Set</a>
-                                        </h5>
+<!--                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>-->
+<!--                                </div>-->
 
-                                        <p class="product-p">Costume Package</p>
-                                    </div>
+<!--                                <div class="product-info d-flex">-->
+<!--                                    <div>-->
+<!--                                        <h5 class="product-title mb-0">-->
+<!--                                            <a href="product-detail.html" class="product-title-link">Fashion Set</a>-->
+<!--                                        </h5>-->
 
-                                    <small class="product-price text-muted ms-auto mt-auto mb-5">$35</small>
-                                </div>
-                            </div>
-                        </div>
+<!--                                        <p class="product-p">Costume Package</p>-->
+<!--                                    </div>-->
 
-                        <div class="col-lg-4 col-12">
-                            <div class="product-thumb">
-                                <a href="#">
-                                    <img src="images/product/nature-zen-3Dn1BZZv3m8-unsplash.jpeg" class="img-fluid product-image" alt="">
-                                </a>
+<!--                                    <small class="product-price text-muted ms-auto mt-auto mb-5">$35</small>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-                                <div class="product-top d-flex">
-                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                                </div>
+<!--                        <div class="col-lg-4 col-12">-->
+<!--                            <div class="product-thumb">-->
+<!--                                <a href="product-detail.html">-->
+<!--                                    <img src="{% static 'images/product/nature-zen-3Dn1BZZv3m8-unsplash.jpeg' %}" class="img-fluid product-image" alt="">-->
+<!--                                </a>-->
 
-                                <div class="product-info d-flex">
-                                    <div>
-                                        <h5 class="product-title mb-0">
-                                            <a href="#" class="product-title-link">Juice Drinks</a>
-                                        </h5>
+<!--                                <div class="product-top d-flex">-->
+<!--                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>-->
+<!--                                </div>-->
 
-                                        <p class="product-p">Nature made another world</p>
-                                    </div>
+<!--                                <div class="product-info d-flex">-->
+<!--                                    <div>-->
+<!--                                        <h5 class="product-title mb-0">-->
+<!--                                            <a href="product-detail.html" class="product-title-link">Juice Drinks</a>-->
+<!--                                        </h5>-->
 
-                                    <small class="product-price text-muted ms-auto mt-auto mb-5">$45</small>
-                                </div>
-                            </div>
-                        </div>
+<!--                                        <p class="product-p">Nature made another world</p>-->
+<!--                                    </div>-->
+
+<!--                                    <small class="product-price text-muted ms-auto mt-auto mb-5">$45</small>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
                         <div class="col-12 text-center">
-                            <a href="{% url 'demo' %}" class="view-all">View All Products</a>
+                            <a href="products.html" class="view-all">View All Products</a>
                         </div>
 
                     </div>
